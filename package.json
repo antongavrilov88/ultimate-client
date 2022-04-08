@@ -6,6 +6,8 @@
   "author": "Anton <antongavrilov88@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "env:prod": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=4096",
+    "env:dev": "cross-env NODE_ENV=development NODE_OPTIONS=--max-old-space-size=4096",
     "test": "jest",
     "test-changed": "jest -o",
     "test-watch": "jest --watch",
