@@ -1,0 +1,8 @@
+{
+  "name": "ultimate-client",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/antongavrilov88/ultimate-client.git",
+  "author": "Anton <antongavrilov88@gmail.com>",
+  "license": "MIT"
+}
