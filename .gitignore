@@ -1,0 +1,14 @@
+idea/
+.idea/
+.DS_Store
+.DS_Store/
+
+node_modules/
+build/
+
+yarn-debug.log
+yarn-error.log
+
+storybook-static/
+.versionrc
+.env
