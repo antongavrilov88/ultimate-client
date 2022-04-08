@@ -1,5 +1,5 @@
-import { SIZEABLE } from 'enums/uiEnums';
 import styled from 'styled-components';
+import { SIZEABLE } from '../../../enums/uiEnums';
 import { ButtonProps } from './types';
 
 const LARGE_HEIGHT = 60;

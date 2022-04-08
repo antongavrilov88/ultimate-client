@@ -5,5 +5,4 @@ import { ButtonProps } from './types';
 const ButtonView: React.FC<ButtonProps> = (props) => (
   <ButtonWrapper {...props}>Чудо кнопка</ButtonWrapper>
 );
-
 export { ButtonView };

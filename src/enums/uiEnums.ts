@@ -4,4 +4,9 @@ enum SIZEABLE {
   SMALL = 'SMALL',
 }
 
-export { SIZEABLE };
+enum UI_THEMES {
+  LIGHT = 'light',
+  DARK = 'dark',
+}
+
+export { SIZEABLE, UI_THEMES };
