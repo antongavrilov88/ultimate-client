@@ -14,6 +14,8 @@ const ButtonWrapper = styled.button<ButtonProps>`
     if (size === SIZEABLE.SMALL) return SMALL_HEIGHT;
     return MEDIUM_HEIGHT;
   }}px;
+
+  background-color: ${({ theme }) => theme.colors.BACKGROUND};
 `;
 
 export { ButtonWrapper };
