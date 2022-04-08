@@ -4,5 +4,9 @@
   "main": "index.js",
   "repository": "https://github.com/antongavrilov88/ultimate-client.git",
   "author": "Anton <antongavrilov88@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1"
+  }
 }
