@@ -29,6 +29,9 @@
       "version": "detect"
     },
     "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
       "webpack": {
         "config": "./.webpack/configs/base.js"
       }
