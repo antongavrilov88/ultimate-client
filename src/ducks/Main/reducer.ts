@@ -2,8 +2,8 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { MainState } from './types';
 import { mainAction } from './actions';
-import { RequestStatus } from '../../constants';
-import { UI_THEMES } from '../../../enums/uiEnums';
+import { RequestStatus } from '../../shared/constants';
+import { UI_THEMES } from '../../enums/uiEnums';
 
 const initialState: MainState = {
   exampleState: {
@@ -15,6 +15,15 @@ const initialState: MainState = {
 };
 
 const mainReducer = createReducer(initialState, (builder) => {
+  builder.addCase(mainAction.loading, (state) => {
+    state.exampleState.status = RequestStatus.LOADING;
+  });
+
+  builder.addCase(mainAction.success, (state, { payload }) => {
+    state.exampleState.status = RequestStatus.SUCCESS;
+    state.exampleState.data = payload.someData;
+  });
+
   builder.addCase(mainAction.setTheme, (state, { payload }) => {
     state.theme = payload;
   });

@@ -2,7 +2,7 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { AuthState } from './types';
 import { authActions } from './actions';
-import { RequestStatus } from '../../constants';
+import { RequestStatus } from '../../shared/constants';
 
 const initialState: AuthState = {
   status: RequestStatus.STILL,

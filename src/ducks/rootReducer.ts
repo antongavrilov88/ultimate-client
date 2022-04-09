@@ -1,7 +1,7 @@
 import { connectRouter } from 'connected-react-router';
 import { BrowserHistory } from 'history';
 import { combineReducers, Reducer } from 'redux';
-import { StatePart } from '../constants';
+import { StatePart } from '../shared/constants';
 import { authReducer } from './Auth/reducer';
 import { mainReducer } from './Main/reducer';
 import { OverallAppReducers, RootState } from './types';

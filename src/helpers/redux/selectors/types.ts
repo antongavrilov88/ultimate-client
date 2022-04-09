@@ -1,4 +1,4 @@
-import { FeatureSelector } from '../../../shared/ducks/types';
+import { FeatureSelector } from '../../../ducks/types';
 import { Hash, Nullable } from 'types/utils';
 
 export interface AdditionalFeatureSelector<ConcreteState> {

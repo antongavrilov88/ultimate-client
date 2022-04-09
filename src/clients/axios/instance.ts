@@ -1,8 +1,8 @@
 import Axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import { bindActionCreators, Store } from 'redux';
 import { pathOr } from 'ramda';
-import { RootAction, RootState } from '../../shared/ducks/types';
-import { authActions } from '../../shared/ducks/Auth/actions';
+import { RootAction, RootState } from '../../ducks/types';
+import { authActions } from '../../ducks/Auth/actions';
 import { StatePart } from '../../shared/constants';
 import { baseURL } from './baseUrl';
 

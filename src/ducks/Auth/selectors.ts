@@ -1,6 +1,6 @@
-import { createGetter } from '../../../helpers/redux';
+import { createGetter } from '../../helpers/redux';
 import { getAuthState } from '../rootSelector';
-import { StatePart } from '../../constants';
+import { StatePart } from '../../shared/constants';
 
 const fromAuthState = createGetter(getAuthState);
 

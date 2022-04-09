@@ -1,6 +1,6 @@
 import { put, takeEvery } from 'redux-saga/effects';
 import { authActions } from './actions';
-import { LoginResponseData } from '../../../types/Auth';
+import { LoginResponseData } from '../../types/Auth';
 
 const TEST_USER_ID = 777;
 

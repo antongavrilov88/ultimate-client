@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { GlobalStyle } from 'style/global';
 import { ThemeProvider } from 'styled-components';
 import { mapThemes } from 'style/themes';
-import { mainAction } from 'shared/ducks/Main/actions';
-import { getTheme } from '../shared/ducks/Main/selectors';
+import { mainAction } from 'ducks/Main/actions';
+import { getTheme } from '../ducks/Main/selectors';
 import { Button } from './components/Button';
-import { UI_THEMES } from '../enums/uiEnums';
+import { SIZEABLE, UI_THEMES } from '../enums/uiEnums';
 
 const ThemedApp: React.FC = () => {
   const currentThemeLabel = useSelector(getTheme);
@@ -23,7 +23,9 @@ const ThemedApp: React.FC = () => {
 
   return (
     <ThemeProvider theme={currentTheme}>
-      <Button onClick={themeToggler} />
+      <Button onClick={themeToggler} size={SIZEABLE.LARGE}>
+        Сменить тему
+      </Button>
       <GlobalStyle />
     </ThemeProvider>
   );

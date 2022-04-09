@@ -2,9 +2,9 @@ import { routerMiddleware } from 'connected-react-router';
 import { BrowserHistory } from 'history';
 import { applyMiddleware, createStore, Store } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { createRootReducer } from '../ducks/rootReducer';
-import { rootSaga } from '../ducks/rootSaga';
-import { RootAction, RootState } from '../ducks/types';
+import { createRootReducer } from '../../ducks/rootReducer';
+import { rootSaga } from '../../ducks/rootSaga';
+import { RootAction, RootState } from '../../ducks/types';
 import { services } from '../../services';
 import { composeEnhancers } from './composeEnhancers';
 

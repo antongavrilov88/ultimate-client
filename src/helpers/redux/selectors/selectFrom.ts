@@ -1,4 +1,4 @@
-import { AppSelector } from '../../../shared/ducks/types';
+import { AppSelector } from '../../../ducks/types';
 import { Hash } from '../../../types/utils';
 import { InFeatureSelector, SelectFrom } from './types';
 

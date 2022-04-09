@@ -1,0 +1,7 @@
+const TEST_DATA_NUMBER = 123;
+
+const TEST_DATA_STRING = 'string';
+
+const TEST_ERROR_MESSAGE = 'Все плохо';
+
+export { TEST_DATA_NUMBER, TEST_DATA_STRING, TEST_ERROR_MESSAGE };

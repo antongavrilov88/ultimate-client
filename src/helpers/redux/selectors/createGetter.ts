@@ -1,4 +1,4 @@
-import { FeatureSelector } from '../../../shared/ducks/types';
+import { FeatureSelector } from '../../../ducks/types';
 import { Hash } from '../../../types/utils';
 import { selectFrom } from './selectFrom';
 import { CreateGetter, Getter, InFeatureSelector } from './types';

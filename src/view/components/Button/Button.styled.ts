@@ -6,7 +6,10 @@ const LARGE_HEIGHT = 60;
 const MEDIUM_HEIGHT = 30;
 const SMALL_HEIGHT = 20;
 
-const ButtonWrapper = styled.button<ButtonProps>`
+const ButtonWrapper = styled.button.attrs<ButtonProps>(({ type }) => ({
+  type,
+  'data-testid': 'component-button',
+}))<ButtonProps>`
   width: 100%;
   height: ${({ size }) => {
     if (size === SIZEABLE.LARGE) return LARGE_HEIGHT;
@@ -15,7 +18,9 @@ const ButtonWrapper = styled.button<ButtonProps>`
     return MEDIUM_HEIGHT;
   }}px;
 
-  background-color: ${({ theme }) => theme.colors.BACKGROUND};
+  background-color: ${({ theme }) => theme.colors.PRIMARY};
+
+  color: ${({ theme }) => theme.fontColors.PRIMARY};
 `;
 
 export { ButtonWrapper };

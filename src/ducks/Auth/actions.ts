@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { AUTH } from './constants';
-import { LoginRequestData, LoginResponseData } from '../../../types/Auth';
-import { DefaultAppError } from '../../../types/errors/AppError';
+import { LoginRequestData, LoginResponseData } from '../../types/Auth';
+import { DefaultAppError } from '../../types/errors/AppError';
 
 const authActions = {
   login: createAction<LoginRequestData>(AUTH.LOGIN),

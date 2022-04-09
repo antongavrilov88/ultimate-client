@@ -1,5 +1,6 @@
 enum COLORS {
   BACKGROUND = 'BACKGROUND',
+  PRIMARY = 'PRIMARY',
 }
 
 export { COLORS };

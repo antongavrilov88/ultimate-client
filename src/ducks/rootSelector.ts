@@ -1,5 +1,5 @@
 import { prop } from 'ramda';
-import { StatePart } from '../constants';
+import { StatePart } from '../shared/constants';
 import { CreateRootGetter } from './types';
 
 const createRootGetter: CreateRootGetter = prop;
