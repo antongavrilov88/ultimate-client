@@ -16,7 +16,7 @@ module.exports = {
     return [
       `eslint ${filesToLint.join(' ')} --rule "{no-console: 2, no-alert:2, no-debugger: 2}"`,
       `prettier ${filenames.join(' ')} -write`,
-      'yarn test-changed',
+      'yarn test',
     ];
   },
 };

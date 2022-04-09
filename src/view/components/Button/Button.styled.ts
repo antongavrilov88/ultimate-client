@@ -10,6 +10,8 @@ const ButtonWrapper = styled.button.attrs<ButtonProps>(({ type }) => ({
   type,
   'data-testid': 'component-button',
 }))<ButtonProps>`
+  border-radius: 5px;
+  padding: 15px;
   width: 100%;
   height: ${({ size }) => {
     if (size === SIZEABLE.LARGE) return LARGE_HEIGHT;
