@@ -8,14 +8,14 @@ import { baseURL } from './baseUrl';
 
 const UNAUTHORIZED_STATUS = 401;
 const FORBIDDEN_STATUS = 403;
-const { resetAuthState } = authActions;
+const { resetAuth } = authActions;
 
 const baseInstance = Axios.create({ baseURL });
 
 const setupInterceptors = (apiService: AxiosInstance, appStore: Store<RootState, RootAction>) => {
   const actions = bindActionCreators(
     {
-      resetAuthState,
+      resetAuth,
     },
     appStore.dispatch
   );
@@ -34,7 +34,7 @@ const setupInterceptors = (apiService: AxiosInstance, appStore: Store<RootState,
     const status = error.status || pathOr(UNAUTHORIZED_STATUS, ['response', 'status'], error);
 
     if (status === UNAUTHORIZED_STATUS || status === FORBIDDEN_STATUS) {
-      actions.resetAuthState();
+      actions.resetAuth();
     }
   };
 
