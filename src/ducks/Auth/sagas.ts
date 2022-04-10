@@ -1,6 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
-import { configureLocalStorage, resetLocalStorage } from 'helpers/localStorage';
+import { resetLocalStorage } from 'helpers/localStorage';
 import { call } from 'ramda';
+import { configureLocalStorageToken } from 'helpers/localStorage/configureLocalStorage';
 import { authActions } from './actions';
 import { LoginResponseData } from '../../types/Auth';
 
@@ -13,7 +14,7 @@ function* loginSaga({ payload }: ReturnType<typeof authActions.login>) {
       success: true,
       token: 'accessToken',
     };
-    yield call(configureLocalStorage, loginData.token);
+    yield call(configureLocalStorageToken, loginData.token);
     yield put(authActions.loginSuccess(loginData));
   } catch ({ message }) {
     yield put(authActions.loginFailure({ message: `${message}` }));

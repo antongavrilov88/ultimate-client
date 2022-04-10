@@ -1,3 +1,4 @@
 import { useAuthStatus } from './useAthStatus';
+import { useTheme } from './useTheme';
 
-export { useAuthStatus };
+export { useAuthStatus, useTheme };
