@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
-// import { AppRoute } from "./AppRoute";
+import { Routes, useLocation, Route } from 'react-router-dom';
 import { routes } from './routes';
 
 const AppRoutesView: React.FC = () => {

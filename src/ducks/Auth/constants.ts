@@ -4,6 +4,8 @@ const AUTH = {
   LOGIN_SUCCESS: '@@auth/LOGIN_SUCCESS',
   LOGIN_FAILURE: '@@auth/LOGIN_FAILURE',
 
+  SET_TOKEN: '@@auth/SET_TOKEN',
+
   RESET_AUTH_STATE: '@@auth/RESET_AUTH_STATE',
 };
 

@@ -1,8 +1,7 @@
 import { put, takeEvery } from 'redux-saga/effects';
+import { configureLocalStorage } from 'helpers/localStorage/configureLocalStorage';
 import { authActions } from './actions';
 import { LoginResponseData } from '../../types/Auth';
-
-const TEST_USER_ID = 777;
 
 function* loginSaga({ payload }: ReturnType<typeof authActions.login>) {
   // eslint-disable-next-line no-console
@@ -12,12 +11,8 @@ function* loginSaga({ payload }: ReturnType<typeof authActions.login>) {
     const loginData: LoginResponseData = yield {
       success: true,
       token: 'accessToken',
-      user: {
-        id: TEST_USER_ID,
-        username: 'AG - awesome developer',
-        email: 'antongavrilov77@yandex.ru',
-      },
     };
+    configureLocalStorage(loginData.token);
     yield put(authActions.loginSuccess(loginData));
   } catch {
     yield put(authActions.loginFailure({ message: '' }));

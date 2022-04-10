@@ -6,9 +6,4 @@ export interface LoginRequestData {
 export interface LoginResponseData {
   success: boolean;
   token: string;
-  user: {
-    id: number;
-    username: string;
-    email: string;
-  };
 }

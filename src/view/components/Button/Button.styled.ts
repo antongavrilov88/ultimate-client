@@ -23,6 +23,9 @@ const ButtonWrapper = styled.button.attrs<ButtonProps>(({ type }) => ({
   background-color: ${({ theme }) => theme.colors.PRIMARY};
 
   color: ${({ theme }) => theme.fontColors.PRIMARY};
+
+  font-size: 24px;
+  font-weight: 600;
 `;
 
 export { ButtonWrapper };

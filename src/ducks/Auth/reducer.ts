@@ -8,11 +8,6 @@ const initialState: AuthState = {
   status: RequestStatus.STILL,
   success: false,
   token: null,
-  user: {
-    id: null,
-    username: null,
-    email: null,
-  },
 };
 
 const authReducer = createReducer(initialState, (builder) => {
@@ -23,21 +18,21 @@ const authReducer = createReducer(initialState, (builder) => {
     state.status = RequestStatus.SUCCESS;
     state.token = payload.token || null;
     state.success = payload.success;
-    state.user.username = payload.user.username || null;
-    state.user.id = payload.user.id || null;
-    state.user.email = payload.user.email || null;
   });
   builder.addCase(authActions.loginFailure, (state) => {
     state.status = RequestStatus.FAILURE;
+  });
+
+  builder.addCase(authActions.setToken, (state, { payload }) => {
+    state.status = RequestStatus.SUCCESS;
+    state.token = payload;
+    state.success = true;
   });
 
   builder.addCase(authActions.resetAuthState, (state) => {
     state.status = initialState.status;
     state.token = initialState.token;
     state.success = initialState.success;
-    state.user.username = initialState.user.username;
-    state.user.id = initialState.user.id;
-    state.user.email = initialState.user.email;
   });
 });
 
