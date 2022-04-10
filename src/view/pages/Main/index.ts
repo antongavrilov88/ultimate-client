@@ -1,7 +1,7 @@
 import { withAuthView } from '../../hocs/withAuthView';
-import { withThemeToggler } from '../../hocs/withThemeToggler';
+import { withHeader } from '../../hocs/withHeader';
 import { MainView } from './Main.view';
 
-const Main = withAuthView(withThemeToggler(MainView));
+const Main = withAuthView(withHeader(MainView));
 
 export { Main };

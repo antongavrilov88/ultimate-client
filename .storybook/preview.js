@@ -1,7 +1,8 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-// import { defaultTheme } from '../src/style/theme';
 import { GlobalStyle } from '../src/style/global';
+import { mapThemes } from '../src/style/themes'
+import { UI_THEMES } from '../src/enums/uiEnums'
 
 const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -14,10 +15,10 @@ const parameters = {
 };
 
 const styledDecorator = (Story) => (
-  <>
+  <ThemeProvider theme={mapThemes[UI_THEMES.DARK]}>
       <GlobalStyle />
       <Story />
-  </>
+  </ThemeProvider>
 );
 
 const decorators = [styledDecorator];

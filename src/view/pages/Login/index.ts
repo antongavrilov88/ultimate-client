@@ -1,6 +1,6 @@
-import { withThemeToggler } from '../../hocs/withThemeToggler';
+import { withHeader } from '../../hocs/withHeader';
 import { LoginView } from './Login.view';
 
-const Login = withThemeToggler(LoginView);
+const Login = withHeader(LoginView);
 
 export { Login };

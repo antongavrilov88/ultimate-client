@@ -3,7 +3,7 @@ import { getTheme } from 'ducks/Main/selectors';
 import { UI_THEMES } from 'enums/uiEnums';
 import { getLocalStorageTheme } from 'helpers/localStorage';
 import { configureLocalStorageTheme } from 'helpers/localStorage/configureLocalStorage';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { UseTheme } from './types';
 
@@ -18,10 +18,11 @@ const useTheme: UseTheme = () => {
     setCurrentTheme(reduxTheme);
   }, [reduxTheme]);
 
-  const setTheme = (theme: UI_THEMES) => {
+  const toggleTheme = useCallback(() => {
+    const theme = currentTheme === UI_THEMES.DARK ? UI_THEMES.LIGHT : UI_THEMES.DARK;
     configureLocalStorageTheme(theme);
     dispatch(mainAction.setTheme(theme));
-  };
+  }, [currentTheme]);
 
   useEffect(() => {
     const localStorageTheme = getLocalStorageTheme() as UI_THEMES;
@@ -30,7 +31,7 @@ const useTheme: UseTheme = () => {
     } else if (localStorageTheme !== reduxTheme) dispatch(mainAction.setTheme(localStorageTheme));
   }, [reduxTheme]);
 
-  return [currentTheme, setTheme];
+  return [currentTheme, toggleTheme];
 };
 
 export { useTheme };
