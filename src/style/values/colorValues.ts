@@ -6,6 +6,8 @@ class ColorValues {
   public readonly BLUE = '#453DE0';
 
   public readonly ORANGE = '#F39034';
+
+  public readonly GREEN = 'rgb(35, 134, 54)';
 }
 
 const colorValues = new ColorValues();

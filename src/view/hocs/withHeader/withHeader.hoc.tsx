@@ -4,13 +4,13 @@ import { useTheme } from 'hooks';
 import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Header } from 'view/components/Header';
-import { MainWrapper } from './withHeader.styled';
+import { ContentWrapper, MainWrapper } from './withHeader.styled';
 
 function withHeader<ComponentProps>(Component: React.FC<ComponentProps>): React.FC<ComponentProps> {
   const WrappedComponent: React.FC<ComponentProps> = (props) => {
     const [theme, toggleTheme] = useTheme();
 
-    const themeToggler = () => toggleTheme();
+    const themeToggle = () => toggleTheme();
 
     const dispatch = useDispatch();
 
@@ -21,8 +21,10 @@ function withHeader<ComponentProps>(Component: React.FC<ComponentProps>): React.
     return (
       <>
         <MainWrapper>
-          <Header onThemeToggle={themeToggler} onLogout={logoutHandler} isTogglerOn={isTogglerOn} />
-          <Component {...props} />
+          <Header onThemeToggle={themeToggle} onLogout={logoutHandler} isTogglerOn={isTogglerOn} />
+          <ContentWrapper>
+            <Component {...props} />
+          </ContentWrapper>
         </MainWrapper>
       </>
     );

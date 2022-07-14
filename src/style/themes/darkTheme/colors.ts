@@ -3,7 +3,7 @@ import { colorValues } from '../../values';
 
 const colors: Record<COLORS, string> = {
   [COLORS.BACKGROUND]: colorValues.BLACK,
-  [COLORS.PRIMARY]: colorValues.ORANGE,
+  [COLORS.PRIMARY]: colorValues.GREEN,
 };
 
 export { colors };
