@@ -1,5 +1,5 @@
 import { AbstractHTTPImplementor } from '../../lib/app-logic/implementors';
-import { ExampleData, ExampleRequest } from '../../types/Example';
+import { ExampleData, ExampleRequest } from '../../types/app/Example';
 
 class MainHTTPImplementation extends AbstractHTTPImplementor<ExampleRequest, ExampleData> {
   private readonly apiPath = '/';

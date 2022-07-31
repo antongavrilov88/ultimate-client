@@ -12,6 +12,21 @@ enum UI_THEMES {
 enum LOCAL_STORAGE_KEYS {
   TOKEN = 'token',
   THEME = 'theme',
+  EMAIL = 'email',
 }
 
-export { SIZEABLE, UI_THEMES, LOCAL_STORAGE_KEYS };
+enum API_TYPES {
+  AUTH = 'auth',
+  USERS = 'users',
+}
+
+enum INPUT_TYPES {
+  PASSWORD = 'password',
+  TEXT = 'text',
+}
+
+enum USER_DATA_FIELDS {
+  EMAIL = 'email',
+}
+
+export { SIZEABLE, UI_THEMES, LOCAL_STORAGE_KEYS, API_TYPES, INPUT_TYPES, USER_DATA_FIELDS };

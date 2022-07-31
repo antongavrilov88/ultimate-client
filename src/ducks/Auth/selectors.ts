@@ -6,4 +6,10 @@ const fromAuthState = createGetter(getAuthState);
 
 const getAuthStatus = fromAuthState(StatePart.SUCCESS);
 
-export { getAuthStatus };
+const getRequestStatus = fromAuthState(StatePart.STATUS);
+
+const getRequestError = fromAuthState(StatePart.ERROR);
+
+const getUsersEmail = fromAuthState(StatePart.EMAIL);
+
+export { getAuthStatus, getRequestStatus, getRequestError, getUsersEmail };

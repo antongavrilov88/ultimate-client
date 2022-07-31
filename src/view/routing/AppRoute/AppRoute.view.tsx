@@ -3,8 +3,8 @@ import { Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Path } from 'shared/constants';
 import { AppRouteProps } from './types';
-import { Login } from '../../pages/Login';
 import { getAuthStatus } from '../../../ducks/Auth/selectors';
+import { Login } from '../../pages/Login';
 
 const AppRouteView: React.FC<AppRouteProps> = (props) => {
   // const { isAuthorised, ...restProps } = props;

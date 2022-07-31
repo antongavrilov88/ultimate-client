@@ -8,6 +8,7 @@ import { baseURL } from './baseUrl';
 
 const UNAUTHORIZED_STATUS = 401;
 const FORBIDDEN_STATUS = 403;
+const MINIMAL_ERROR_STATUS = 400;
 const { resetAuth } = authActions;
 
 const baseInstance = Axios.create({ baseURL });
@@ -32,6 +33,14 @@ const setupInterceptors = (apiService: AxiosInstance, appStore: Store<RootState,
 
   const onResponseError = (error: AxiosResponse<AxiosError>) => {
     const status = error.status || pathOr(UNAUTHORIZED_STATUS, ['response', 'status'], error);
+
+    if (
+      status > MINIMAL_ERROR_STATUS &&
+      status !== UNAUTHORIZED_STATUS &&
+      status !== FORBIDDEN_STATUS
+    ) {
+      throw new Error(JSON.parse(error.request.response).message);
+    }
 
     if (status === UNAUTHORIZED_STATUS || status === FORBIDDEN_STATUS) {
       actions.resetAuth();

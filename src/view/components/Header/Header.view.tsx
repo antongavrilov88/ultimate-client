@@ -6,7 +6,7 @@ import { HeaderProps } from './types';
 import { MainWrapper, ThemeTogglerWrapper, LogoutWrapper } from './Header.styled';
 import { Button } from '../Button';
 
-const HeaderView: React.FC<HeaderProps> = ({ onThemeToggle, onLogout, isTogglerOn }) => {
+const HeaderView: React.FC<HeaderProps> = ({ onThemeToggle, email, onLogout, isTogglerOn }) => {
   const isAuthorised = useAuthStatus();
 
   const onThemeToggleHandler = () => {
@@ -29,6 +29,7 @@ const HeaderView: React.FC<HeaderProps> = ({ onThemeToggle, onLogout, isTogglerO
   return (
     <MainWrapper>
       <LogoutWrapper>{renderedLogoutButton}</LogoutWrapper>
+      <div>{email}</div>
       <ThemeTogglerWrapper>
         <Toggler onToggle={onThemeToggleHandler} isOn={isTogglerOn} />
       </ThemeTogglerWrapper>

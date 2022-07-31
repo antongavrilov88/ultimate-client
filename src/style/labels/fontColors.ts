@@ -1,5 +1,6 @@
 enum FONT_COLORS {
   PRIMARY = 'PRIMARY',
+  DANGER = 'DANGER',
 }
 
 export { FONT_COLORS };

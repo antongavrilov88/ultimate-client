@@ -1,6 +1,8 @@
+import { LoginPageView } from './view';
 import { withHeader } from '../../hocs/withHeader';
-import { LoginView } from './Login.view';
+import { withUnauthView } from '../../hocs/withUnauthView';
+import { withLazyLoading } from '../../hocs/withLazyLoading';
 
-const Login = withHeader(LoginView);
+const Login = withLazyLoading(withUnauthView(withHeader(LoginPageView)));
 
 export { Login };

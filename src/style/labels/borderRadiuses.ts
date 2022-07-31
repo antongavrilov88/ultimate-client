@@ -1,0 +1,7 @@
+enum BORDER_RADIUSES {
+  SMALL = 'SMALL',
+  MEDIUM = 'MEDIUM',
+  LARGE = 'LARGE',
+}
+
+export { BORDER_RADIUSES };

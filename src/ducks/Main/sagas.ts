@@ -1,6 +1,6 @@
 import { getContext, put, call, takeLatest } from 'redux-saga/effects';
 import { AbstractLogic } from '../../logic';
-import { ExampleData } from '../../types/Example';
+import { ExampleData } from '../../types/app/Example';
 import { mainAction } from './actions';
 
 function* mainExampleSaga({ payload }: ReturnType<typeof mainAction.init>) {

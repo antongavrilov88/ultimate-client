@@ -1,7 +1,7 @@
 import { getMockedContext } from 'helpers/redux/tests/sagaMockedProviders';
 import { expectSaga } from 'redux-saga-test-plan';
 import { EffectProviders } from 'redux-saga-test-plan/providers';
-import { ExampleData } from 'types/Example';
+import { ExampleData } from 'types/app/Example';
 import { MAIN } from '../constants';
 import { mainSaga } from '../sagas';
 import { TEST_DATA_NUMBER, TEST_DATA_STRING, TEST_ERROR_MESSAGE } from './constants';

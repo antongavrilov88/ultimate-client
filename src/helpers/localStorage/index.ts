@@ -4,6 +4,7 @@ import { resetLocalStorage } from './resetLocalStorage';
 import { getFromLocalStorage } from './getFromLocalStorage';
 
 const getLocalStorageToken = () => getFromLocalStorage(LOCAL_STORAGE_KEYS.TOKEN);
+const getLocalStorageEmail = () => getFromLocalStorage(LOCAL_STORAGE_KEYS.EMAIL);
 const getLocalStorageTheme = () => getFromLocalStorage(LOCAL_STORAGE_KEYS.THEME);
 
 export {
@@ -12,4 +13,5 @@ export {
   getFromLocalStorage,
   getLocalStorageToken,
   getLocalStorageTheme,
+  getLocalStorageEmail,
 };

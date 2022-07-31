@@ -21,4 +21,32 @@ const ContentWrapper = styled.div`
   color: ${({ theme }) => theme.fontColors.PRIMARY};
 `;
 
-export { MainWrapper, ContentWrapper };
+const ErrorMessageWrapper = styled.div`
+  color: ${({ theme }) => theme.fontColors.DANGER};
+`;
+
+const FormWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  justify-content: space-between;
+`;
+
+const InputWrapper = styled.div`
+  height: 42px;
+  width: 250px;
+`;
+
+const ButtonWrapper = styled.div`
+  height: 60px;
+  width: 250px;
+`;
+
+export {
+  MainWrapper,
+  ContentWrapper,
+  ErrorMessageWrapper,
+  FormWrapper,
+  InputWrapper,
+  ButtonWrapper,
+};

@@ -1,5 +1,5 @@
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
-import { AbstractHTTPClient, HTTPClientError } from 'lib/app-logic';
+import { AbstractHTTPClient } from 'lib/app-logic';
 
 class AxiosHTTPClient extends AbstractHTTPClient<AxiosRequestConfig> {
   constructor(private readonly instance: AxiosInstance) {
@@ -7,7 +7,7 @@ class AxiosHTTPClient extends AbstractHTTPClient<AxiosRequestConfig> {
   }
 
   private makeRequest<Data>(config: AxiosRequestConfig): Promise<AxiosResponse<Data>> {
-    return this.instance(config).catch((error) => Promise.reject(new HTTPClientError(error)));
+    return this.instance(config);
   }
 
   public makeGetRequest<Data>(config: AxiosRequestConfig): Promise<AxiosResponse<Data>> {

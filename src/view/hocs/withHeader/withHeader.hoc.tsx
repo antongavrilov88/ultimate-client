@@ -5,6 +5,7 @@ import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { Header } from 'view/components/Header';
 import { ContentWrapper, MainWrapper } from './withHeader.styled';
+import { useUserEmail } from '../../../hooks/useUserEmail';
 
 function withHeader<ComponentProps>(Component: React.FC<ComponentProps>): React.FC<ComponentProps> {
   const WrappedComponent: React.FC<ComponentProps> = (props) => {
@@ -18,10 +19,17 @@ function withHeader<ComponentProps>(Component: React.FC<ComponentProps>): React.
 
     const isTogglerOn = useMemo(() => theme === UI_THEMES.DARK, [theme]);
 
+    const email = useUserEmail();
+
     return (
       <>
         <MainWrapper>
-          <Header onThemeToggle={themeToggle} onLogout={logoutHandler} isTogglerOn={isTogglerOn} />
+          <Header
+            onThemeToggle={themeToggle}
+            onLogout={logoutHandler}
+            isTogglerOn={isTogglerOn}
+            email={email}
+          />
           <ContentWrapper>
             <Component {...props} />
           </ContentWrapper>

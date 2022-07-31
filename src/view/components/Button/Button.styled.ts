@@ -6,8 +6,9 @@ const LARGE_HEIGHT = 60;
 const MEDIUM_HEIGHT = 30;
 const SMALL_HEIGHT = 20;
 
-const ButtonWrapper = styled.button.attrs<ButtonProps>(({ type }) => ({
+const ButtonWrapper = styled.button.attrs<ButtonProps>(({ type, isDisabled }) => ({
   type,
+  disabled: isDisabled,
   'data-testid': 'component-button',
 }))<ButtonProps>`
   border-radius: 5px;

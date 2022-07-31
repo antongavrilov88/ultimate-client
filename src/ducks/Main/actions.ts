@@ -1,6 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 import { DefaultAppError } from '../../types/errors/AppError';
-import { ExampleData, ExampleRequest } from '../../types/Example';
+import { ExampleData, ExampleRequest } from '../../types/app/Example';
 import { UI_THEMES } from '../../enums/uiEnums';
 import { MAIN } from './constants';
 

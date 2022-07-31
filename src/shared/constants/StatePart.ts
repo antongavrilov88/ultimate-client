@@ -4,6 +4,9 @@ enum StatePart {
   THEME = 'theme',
   AUTH = 'auth',
   SUCCESS = 'success',
+  ERROR = 'error',
+  STATUS = 'status',
+  EMAIL = 'email',
 }
 
 export { StatePart };
