@@ -1,6 +1,6 @@
 import { useAuthStatus } from 'hooks';
 import React, { useMemo } from 'react';
-import { Login } from '../../containers/Login';
+import { Login } from 'view/pages/Login';
 
 function withAuthView<ComponentProps>(
   Component: React.FC<ComponentProps>
