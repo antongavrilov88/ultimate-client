@@ -1,11 +1,11 @@
 import { FailedRequestable, Requestable, RequestableWithInitialData } from 'types/Requestable';
-import { RequestStatus } from 'shared/constants';
+import { REQUEST_STATUS } from 'shared/constants';
 import { FailureStatus, LoadingStatus, SuccessStatus } from './types';
 import { Hash } from '../../../types/utils';
 
 const loadingStatus: LoadingStatus = () => ({
   data: null,
-  status: RequestStatus.LOADING,
+  status: REQUEST_STATUS.LOADING,
   error: null,
 });
 
@@ -13,7 +13,7 @@ loadingStatus.withData = <Data extends any = null>({
   data,
 }: RequestableWithInitialData<Data> | Requestable<Data>) => ({
   data: data as Data,
-  status: RequestStatus.LOADING,
+  status: REQUEST_STATUS.LOADING,
   error: null,
 });
 
@@ -21,17 +21,17 @@ const successStatus: SuccessStatus = <Data extends any = null>({
   data,
 }: RequestableWithInitialData<Data> | Requestable<Data>) => ({
   data: data as Data,
-  status: RequestStatus.SUCCESS,
+  status: REQUEST_STATUS.SUCCESS,
   error: null,
 });
 successStatus.pushPayload = (payload) => ({
   data: payload,
-  status: RequestStatus.SUCCESS,
+  status: REQUEST_STATUS.SUCCESS,
   error: null,
 });
 successStatus.extractFromPayload = (dataExtractor) => (payload) => ({
   data: dataExtractor(payload),
-  status: RequestStatus.SUCCESS,
+  status: REQUEST_STATUS.SUCCESS,
   error: null,
 });
 
@@ -40,7 +40,7 @@ const failureStatus: FailureStatus = <ErrorData extends Hash>(
   payload: ErrorData
 ): FailedRequestable<ErrorData> => ({
   data,
-  status: RequestStatus.FAILURE,
+  status: REQUEST_STATUS.FAILURE,
   error: payload,
 });
 

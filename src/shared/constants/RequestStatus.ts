@@ -1,8 +1,8 @@
-enum RequestStatus {
+enum REQUEST_STATUS {
   STILL = 'STILL',
   LOADING = 'LOADING',
   SUCCESS = 'SUCCESS',
   FAILURE = 'FAILURE',
 }
 
-export { RequestStatus };
+export { REQUEST_STATUS };

@@ -13,6 +13,8 @@ const MainWrapper = styled.div`
   flex-direction: row;
   align-content: center;
   justify-content: space-between;
+
+  border-bottom: 1px solid;
 `;
 
 const ThemeTogglerWrapper = styled.div`

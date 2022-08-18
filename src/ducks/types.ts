@@ -1,15 +1,15 @@
 import { RouterAction, RouterState } from 'connected-react-router';
 import { Reducer } from 'redux';
-import { StatePart } from 'shared/constants';
+import { STATE_PART } from 'shared/constants';
 import { AuthState } from './Auth/types';
 import { MainState } from './Main/types';
 
 export type RootAction = RouterAction | any;
 
 export interface RootState {
-  [StatePart.ROUTER]: RouterState;
-  [StatePart.MAIN]: MainState;
-  [StatePart.AUTH]: AuthState;
+  [STATE_PART.ROUTER]: RouterState;
+  [STATE_PART.MAIN]: MainState;
+  [STATE_PART.AUTH]: AuthState;
 }
 
 export type OverallAppReducers = {

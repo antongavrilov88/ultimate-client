@@ -1,15 +1,15 @@
 import { createGetter } from '../../helpers/redux';
 import { getAuthState } from '../rootSelector';
-import { StatePart } from '../../shared/constants';
+import { STATE_PART } from '../../shared/constants';
 
 const fromAuthState = createGetter(getAuthState);
 
-const getAuthStatus = fromAuthState(StatePart.SUCCESS);
+const getAuthStatus = fromAuthState(STATE_PART.SUCCESS);
 
-const getRequestStatus = fromAuthState(StatePart.STATUS);
+const getRequestStatus = fromAuthState(STATE_PART.STATUS);
 
-const getRequestError = fromAuthState(StatePart.ERROR);
+const getRequestError = fromAuthState(STATE_PART.ERROR);
 
-const getUsersEmail = fromAuthState(StatePart.EMAIL);
+const getUsersEmail = fromAuthState(STATE_PART.EMAIL);
 
 export { getAuthStatus, getRequestStatus, getRequestError, getUsersEmail };

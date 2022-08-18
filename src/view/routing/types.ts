@@ -1,8 +1,8 @@
 import React from 'react';
-import { Path } from 'shared/constants';
+import { PATH } from 'shared/constants';
 
 export interface Route {
-  path: Path;
+  path: PATH;
   element: any;
   exact?: boolean;
 }

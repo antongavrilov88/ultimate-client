@@ -13,7 +13,7 @@ import {
   InputWrapper,
   MainWrapper,
 } from './Login.styled';
-import { RequestStatus } from '../../../shared/constants';
+import { REQUEST_STATUS } from '../../../shared/constants';
 import { SkeletonGag } from './SkeletonGag';
 
 type Props = StateProps & DispatchProps;
@@ -62,8 +62,10 @@ const LoginView: React.FC<Props> = ({ resetError, requestStatus, requestError, l
     return <ErrorMessageWrapper>{requestError.message}</ErrorMessageWrapper>;
   }, [requestError]);
 
+  const isLoading = useMemo(() => requestStatus === REQUEST_STATUS.LOADING, [requestStatus]);
+
   const renderedContent = useMemo(() => {
-    if (requestStatus === RequestStatus.LOADING) return <SkeletonGag />;
+    if (isLoading) return <SkeletonGag />;
     return (
       <MainWrapper>
         <ContentWrapper>
@@ -99,7 +101,7 @@ const LoginView: React.FC<Props> = ({ resetError, requestStatus, requestError, l
         </ContentWrapper>
       </MainWrapper>
     );
-  }, [requestStatus, isFormValid]);
+  }, [requestStatus, isFormValid, isLoading]);
 
   return <>{renderedContent}</>;
 };

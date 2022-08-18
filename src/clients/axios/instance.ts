@@ -3,7 +3,7 @@ import { bindActionCreators, Store } from 'redux';
 import { pathOr } from 'ramda';
 import { RootAction, RootState } from '../../ducks/types';
 import { authActions } from '../../ducks/Auth/actions';
-import { StatePart } from '../../shared/constants';
+import { STATE_PART } from '../../shared/constants';
 import { baseURL } from './baseUrl';
 
 const UNAUTHORIZED_STATUS = 401;
@@ -22,7 +22,7 @@ const setupInterceptors = (apiService: AxiosInstance, appStore: Store<RootState,
   );
   const onRequestSuccess = (request: AxiosRequestConfig) => {
     const config = request;
-    const { token } = appStore.getState()[StatePart.AUTH];
+    const { token } = appStore.getState()[STATE_PART.AUTH];
     if (config && config.headers && token) {
       config.headers.Authorization = `${token}`;
     }
