@@ -13,7 +13,7 @@ import {
   InputWrapper,
   MainWrapper,
 } from './Register.styled';
-import { RequestStatus } from '../../../shared/constants';
+import { REQUEST_STATUS } from '../../../shared/constants';
 import { SkeletonGag } from './SkeletonGag';
 
 type Props = StateProps & DispatchProps;
@@ -68,7 +68,7 @@ const RegisterView: React.FC<Props> = ({
   }, [requestError]);
 
   const renderedContent = useMemo(() => {
-    if (requestStatus === RequestStatus.LOADING) return <SkeletonGag />;
+    if (requestStatus === REQUEST_STATUS.LOADING) return <SkeletonGag />;
     return (
       <MainWrapper>
         <ContentWrapper>

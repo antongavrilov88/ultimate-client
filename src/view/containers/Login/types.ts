@@ -1,10 +1,10 @@
-import { RequestStatus } from '../../../shared/constants';
+import { REQUEST_STATUS } from '../../../shared/constants';
 import { DefaultAppError } from '../../../types/errors/AppError';
 import { RegisterRequestData } from '../../../types/app/Auth';
 import { Nullable } from '../../../types/utils';
 
 interface StateProps {
-  requestStatus: RequestStatus;
+  requestStatus: REQUEST_STATUS;
   requestError: Nullable<DefaultAppError>;
 }
 

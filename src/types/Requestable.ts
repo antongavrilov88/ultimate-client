@@ -1,47 +1,47 @@
 import { AppError } from './errors/AppError';
-import { RequestStatus } from 'shared/constants';
+import { REQUEST_STATUS } from 'shared/constants';
 import { Hash, Nullable } from './utils';
 
 export interface Request<Data extends any = null, ErrorData extends Hash = Hash> {
   data: Nullable<Data>;
-  status: RequestStatus;
+  status: REQUEST_STATUS;
   error: AppError<ErrorData>;
 }
 
 export interface StillRequestableWithData<Data extends any = null> extends Request<Data> {
   data: Data;
-  status: RequestStatus.STILL;
+  status: REQUEST_STATUS.STILL;
   error: null;
 }
 
 export interface StillRequestableWithoutData extends Request {
   data: null;
-  status: RequestStatus.STILL;
+  status: REQUEST_STATUS.STILL;
   error: null;
 }
 
 export interface LoadingRequestable extends Request {
   data: null;
-  status: RequestStatus.LOADING;
+  status: REQUEST_STATUS.LOADING;
   error: null;
 }
 
 export interface LoadingRequestableWithData<Data extends any = null> extends Request<Data> {
   data: Data;
-  status: RequestStatus.LOADING;
+  status: REQUEST_STATUS.LOADING;
   error: null;
 }
 
 export interface SuccessRequestable<Data extends any = null> extends Request<Data> {
   data: Data;
-  status: RequestStatus.SUCCESS;
+  status: REQUEST_STATUS.SUCCESS;
   error: null;
 }
 
 export interface FailedRequestable<Data extends any = null, ErrorData extends Hash = Hash>
   extends Request<Data> {
   data: Data;
-  status: RequestStatus.FAILURE;
+  status: REQUEST_STATUS.FAILURE;
   error: ErrorData;
 }
 

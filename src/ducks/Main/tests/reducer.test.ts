@@ -1,5 +1,5 @@
 import { UI_THEMES } from 'enums/uiEnums';
-import { RequestStatus } from 'shared/constants';
+import { REQUEST_STATUS } from 'shared/constants';
 import { MAIN } from '../constants';
 import { mainReducer } from '../reducer';
 import { MainState } from '../types';
@@ -8,14 +8,14 @@ import { TEST_DATA_STRING } from './constants';
 describe('Main reducer', () => {
   const initMainState: MainState = {
     exampleState: {
-      status: RequestStatus.STILL,
+      status: REQUEST_STATUS.STILL,
       data: null,
       error: null,
     },
     theme: UI_THEMES.DARK,
   };
 
-  test('Должен вызывать initMainState при пустом action', () => {
+  test('Should return initState if no action provided', () => {
     const newState = mainReducer(undefined, {} as any);
     expect(newState).toEqual(initMainState);
   });
@@ -45,7 +45,7 @@ describe('Main reducer', () => {
         ...initMainState,
         exampleState: {
           ...initMainState.exampleState,
-          status: RequestStatus.LOADING,
+          status: REQUEST_STATUS.LOADING,
         },
       };
       expect(newState).toEqual(expectedState);
@@ -64,7 +64,7 @@ describe('Main reducer', () => {
         ...initMainState,
         exampleState: {
           ...initMainState.exampleState,
-          status: RequestStatus.SUCCESS,
+          status: REQUEST_STATUS.SUCCESS,
           data: TEST_DATA_STRING,
         },
       };

@@ -1,7 +1,8 @@
-enum Path {
+enum PATH {
   MAIN = '/',
   LOGIN = '/login',
   REGISTER = '/register',
+  COMPONENTS = '/components',
 }
 
-export { Path };
+export { PATH };

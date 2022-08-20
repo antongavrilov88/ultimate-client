@@ -1,4 +1,6 @@
 class PaddingValues {
+  public readonly PX_5 = '5px';
+
   public readonly PX_20 = '20px';
 
   public readonly PX_50 = '50px';

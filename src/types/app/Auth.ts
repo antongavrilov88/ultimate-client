@@ -5,14 +5,8 @@ export interface LoginRequestData {
 
 export interface LoginResponseData {
   id: number;
-  attributes: {
-    email: string;
-  };
-  relationships: {
-    token: {
-      token: string;
-    };
-  };
+  email: string;
+  token: string;
 }
 
 export interface RegisterRequestData extends LoginRequestData {}

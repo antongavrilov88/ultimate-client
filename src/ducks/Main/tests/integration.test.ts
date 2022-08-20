@@ -1,6 +1,6 @@
 import { UI_THEMES } from 'enums/uiEnums';
 import { getMockedContext } from 'helpers/redux/tests/sagaMockedProviders';
-import { RequestStatus } from 'shared/constants';
+import { REQUEST_STATUS } from 'shared/constants';
 import { expectSaga } from 'redux-saga-test-plan';
 import { EffectProviders } from 'redux-saga-test-plan/providers';
 import { MainState } from '../types';
@@ -20,7 +20,7 @@ describe('Example', () => {
 
   const initMainState: MainState = {
     exampleState: {
-      status: RequestStatus.STILL,
+      status: REQUEST_STATUS.STILL,
       data: null,
       error: null,
     },
@@ -37,7 +37,7 @@ describe('Example', () => {
       ...initMainState,
       exampleState: {
         ...initMainState.exampleState,
-        status: RequestStatus.SUCCESS,
+        status: REQUEST_STATUS.SUCCESS,
         data: TEST_DATA_STRING,
       },
     };

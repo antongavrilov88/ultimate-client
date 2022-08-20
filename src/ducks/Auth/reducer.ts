@@ -2,10 +2,10 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { AuthState } from './types';
 import { authActions } from './actions';
-import { RequestStatus } from '../../shared/constants';
+import { REQUEST_STATUS } from '../../shared/constants';
 
 const initialState: AuthState = {
-  status: RequestStatus.STILL,
+  status: REQUEST_STATUS.STILL,
   success: false,
   token: null,
   email: null,
@@ -14,39 +14,50 @@ const initialState: AuthState = {
 
 const authReducer = createReducer(initialState, (builder) => {
   builder.addCase(authActions.registerLoading, (state) => {
-    state.status = RequestStatus.LOADING;
+    state.status = REQUEST_STATUS.LOADING;
     state.token = initialState.token;
     state.success = initialState.success;
     state.email = initialState.email;
     state.error = initialState.error;
   });
   builder.addCase(authActions.registerSuccess, (state, { payload }) => {
-    state.status = RequestStatus.SUCCESS;
+    state.status = REQUEST_STATUS.SUCCESS;
     state.success = true;
-    state.token = payload.relationships.token.token;
-    state.email = payload.attributes.email;
+    state.token = payload.token;
+    state.email = payload.email;
   });
   builder.addCase(authActions.registerFailure, (state, { payload }) => {
-    state.status = RequestStatus.FAILURE;
+    state.status = REQUEST_STATUS.FAILURE;
     state.error = payload;
   });
 
   builder.addCase(authActions.loginLoading, (state) => {
-    state.status = RequestStatus.LOADING;
+    state.status = REQUEST_STATUS.LOADING;
   });
   builder.addCase(authActions.loginSuccess, (state, { payload }) => {
-    state.status = RequestStatus.SUCCESS;
+    state.status = REQUEST_STATUS.SUCCESS;
     state.success = true;
-    state.token = payload.relationships.token.token;
-    state.email = payload.attributes.email;
+    state.token = payload.token;
+    state.email = payload.email;
   });
   builder.addCase(authActions.loginFailure, (state, { payload }) => {
-    state.status = RequestStatus.FAILURE;
+    state.status = REQUEST_STATUS.FAILURE;
+    state.error = payload;
+  });
+
+  builder.addCase(authActions.logoutLoading, (state) => {
+    state.status = REQUEST_STATUS.LOADING;
+  });
+  builder.addCase(authActions.logoutSuccess, (state) => {
+    state.status = REQUEST_STATUS.SUCCESS;
+  });
+  builder.addCase(authActions.logoutFailure, (state, { payload }) => {
+    state.status = REQUEST_STATUS.FAILURE;
     state.error = payload;
   });
 
   builder.addCase(authActions.setToken, (state, { payload }) => {
-    state.status = RequestStatus.SUCCESS;
+    state.status = REQUEST_STATUS.SUCCESS;
     state.token = payload;
     state.success = true;
   });

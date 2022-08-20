@@ -1,5 +1,6 @@
 enum FONT_COLORS {
   PRIMARY = 'PRIMARY',
+  ACTIVE = 'ACTIVE',
   DANGER = 'DANGER',
 }
 

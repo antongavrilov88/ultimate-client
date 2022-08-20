@@ -1,4 +1,4 @@
-enum StatePart {
+enum STATE_PART {
   ROUTER = 'router',
   MAIN = 'main',
   THEME = 'theme',
@@ -9,4 +9,4 @@ enum StatePart {
   EMAIL = 'email',
 }
 
-export { StatePart };
+export { STATE_PART };

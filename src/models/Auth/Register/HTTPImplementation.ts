@@ -31,14 +31,8 @@ class RegisterHTTPImplementation extends AbstractHTTPImplementor<
   ) => {
     const transformedData: RegisterResponseData = {
       id: server_response.data.id,
-      attributes: {
-        email: server_response.data.attributes.email,
-      },
-      relationships: {
-        token: {
-          token: server_response.data.relationships.token.token,
-        },
-      },
+      email: server_response.data.attributes.email,
+      token: server_response.data.relationships.token.token,
     };
     return transformedData;
   };

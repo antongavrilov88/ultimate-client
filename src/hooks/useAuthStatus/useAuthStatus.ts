@@ -6,7 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { UseAuthStatus } from './types';
 
 const useAuthStatus: UseAuthStatus = () => {
-  const [isAuthorised, setIsAuthorised] = useState<boolean>(false);
+  const [isAuthorised, setIsAuthorised] = useState<boolean>(
+    useSelector(getAuthStatus) && Boolean(getLocalStorageToken())
+  );
 
   const isReduxToken = useSelector(getAuthStatus);
 

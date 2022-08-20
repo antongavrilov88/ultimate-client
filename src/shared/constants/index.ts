@@ -1,5 +1,5 @@
-import { Path } from './Path';
-import { StatePart } from './StatePart';
-import { RequestStatus } from './RequestStatus';
+import { PATH } from './Path';
+import { STATE_PART } from './StatePart';
+import { REQUEST_STATUS } from './RequestStatus';
 
-export { Path, StatePart, RequestStatus };
+export { PATH, STATE_PART, REQUEST_STATUS };
