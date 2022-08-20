@@ -10,9 +10,9 @@ import { LoginResponseData, RegisterResponseData } from '../../types/app/Auth';
 import { AbstractLogic } from '../../logic';
 
 function* loginSaga({ payload }: ReturnType<typeof authActions.login>) {
+  const { auth }: AbstractLogic = yield getContext('logic');
   yield put(authActions.loginLoading());
   try {
-    const { auth }: AbstractLogic = yield getContext('logic');
     const loginData: LoginResponseData = yield call(auth.login, payload);
     yield call(configureLocalStorageToken, loginData.token);
     yield call(configureLocalStorageEmail, loginData.email);
