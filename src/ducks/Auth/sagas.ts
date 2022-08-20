@@ -14,8 +14,8 @@ function* loginSaga({ payload }: ReturnType<typeof authActions.login>) {
   try {
     const { auth }: AbstractLogic = yield getContext('logic');
     const loginData: LoginResponseData = yield call(auth.login, payload);
-    yield call(configureLocalStorageToken, loginData.relationships.token.token);
-    yield call(configureLocalStorageEmail, loginData.attributes.email);
+    yield call(configureLocalStorageToken, loginData.token);
+    yield call(configureLocalStorageEmail, loginData.email);
     yield put(authActions.loginSuccess(loginData));
   } catch ({ message }) {
     yield put(authActions.loginFailure({ message: `${message}` }));
@@ -28,8 +28,8 @@ function* registerSaga({ payload }: ReturnType<typeof authActions.register>) {
     const { auth }: AbstractLogic = yield getContext('logic');
     const registerData: RegisterResponseData = yield call(auth.register, payload);
     yield put(authActions.registerSuccess(registerData));
-    yield call(configureLocalStorageToken, registerData.relationships.token.token);
-    yield call(configureLocalStorageEmail, registerData.attributes.email);
+    yield call(configureLocalStorageToken, registerData.token);
+    yield call(configureLocalStorageEmail, registerData.email);
   } catch ({ message }) {
     yield put(authActions.registerFailure({ message: `${message}` }));
   }
@@ -49,6 +49,7 @@ function* logoutSaga() {
   try {
     const { auth }: AbstractLogic = yield getContext('logic');
     yield call(auth.logout);
+    yield put(authActions.logoutSuccess());
     yield put(authActions.resetAuth());
   } catch ({ message }) {
     yield put(authActions.logoutFailure({ message: `${message}` }));

@@ -23,8 +23,8 @@ const authReducer = createReducer(initialState, (builder) => {
   builder.addCase(authActions.registerSuccess, (state, { payload }) => {
     state.status = REQUEST_STATUS.SUCCESS;
     state.success = true;
-    state.token = payload.relationships.token.token;
-    state.email = payload.attributes.email;
+    state.token = payload.token;
+    state.email = payload.email;
   });
   builder.addCase(authActions.registerFailure, (state, { payload }) => {
     state.status = REQUEST_STATUS.FAILURE;
@@ -37,10 +37,21 @@ const authReducer = createReducer(initialState, (builder) => {
   builder.addCase(authActions.loginSuccess, (state, { payload }) => {
     state.status = REQUEST_STATUS.SUCCESS;
     state.success = true;
-    state.token = payload.relationships.token.token;
-    state.email = payload.attributes.email;
+    state.token = payload.token;
+    state.email = payload.email;
   });
   builder.addCase(authActions.loginFailure, (state, { payload }) => {
+    state.status = REQUEST_STATUS.FAILURE;
+    state.error = payload;
+  });
+
+  builder.addCase(authActions.logoutLoading, (state) => {
+    state.status = REQUEST_STATUS.LOADING;
+  });
+  builder.addCase(authActions.logoutSuccess, (state) => {
+    state.status = REQUEST_STATUS.SUCCESS;
+  });
+  builder.addCase(authActions.logoutFailure, (state, { payload }) => {
     state.status = REQUEST_STATUS.FAILURE;
     state.error = payload;
   });

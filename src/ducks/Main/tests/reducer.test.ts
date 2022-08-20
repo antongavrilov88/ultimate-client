@@ -15,7 +15,7 @@ describe('Main reducer', () => {
     theme: UI_THEMES.DARK,
   };
 
-  test('Должен вызывать initMainState при пустом action', () => {
+  test('Should return initState if no action provided', () => {
     const newState = mainReducer(undefined, {} as any);
     expect(newState).toEqual(initMainState);
   });
