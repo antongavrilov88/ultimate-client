@@ -2,8 +2,8 @@ import { mainAction } from '../actions';
 import { MAIN } from '../constants';
 import { TEST_DATA_NUMBER, TEST_DATA_STRING, TEST_ERROR_MESSAGE } from './constants';
 
-describe('Main action creators должны создавать корректные actions', () => {
-  test('mainAction.mainInit должен генерировать корректный action', () => {
+describe('Main action creators should create correct actions', () => {
+  test('mainAction.mainInit should create correct action', () => {
     const action = mainAction.init({ someParams: TEST_DATA_NUMBER });
     const expectedAction = {
       type: MAIN.MAIN_INIT,
